@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.options import Options
 import time
 
-CRNS = ["21604", "20167", "12345", "23452"] #Almak istediğiniz CRN'leri silin.
+CRNS = ["21604", "20167", "12345", "23452"] #Almak istediğiniz CRN'leri yazın.
 
 mail = "abc@itu.edu.tr"
 password = "abcdef"
