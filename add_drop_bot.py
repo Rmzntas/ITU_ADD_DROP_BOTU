@@ -16,6 +16,7 @@ from selenium import webdriver
 from selenium.webdriver.edge.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
 
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from webdriver_manager.chrome import ChromeDriverManager
@@ -47,7 +48,7 @@ login_btn = driver.find_element(By.NAME, "ctl00$ContentPlaceHolder1$btnLogin").c
 #driver.find_element(By.CLASS_NAME, "stretched-link").click()    ## eğer yatay geçiş yapmadıysanız bu satırı silin.
 
 driver.find_element(By.XPATH, "//*[@id='page-wrapper']/div[1]/div[2]/div[1]/ul/li[5]/a").click()
-time.sleep(0.4)
+WebDriverWait(driver, 10).until(lambda x: x.find_element(By.XPATH, "//*[@id='page-wrapper']/div[1]/div[2]/div[4]/ul/li/div/ul/li[2]/a"))
 driver.find_element(By.XPATH, "//*[@id='page-wrapper']/div[1]/div[2]/div[4]/ul/li/div/ul/li[2]/a").click()
 
 
@@ -77,7 +78,7 @@ while True:
         login_btn = driver.find_element(By.NAME, "ctl00$ContentPlaceHolder1$btnLogin").click()
         #driver.find_element(By.CLASS_NAME, "stretched-link").click()    ## eğer yatay geçiş yapmadıysanız bu satırı silin.
         driver.find_element(By.XPATH, "//*[@id='page-wrapper']/div[1]/div[2]/div[1]/ul/li[5]/a").click()
-        time.sleep(0.4)
+        WebDriverWait(driver, 10).until(lambda x: x.find_element(By.XPATH, "//*[@id='page-wrapper']/div[1]/div[2]/div[4]/ul/li/div/ul/li[2]/a"))
         driver.find_element(By.XPATH, "//*[@id='page-wrapper']/div[1]/div[2]/div[4]/ul/li/div/ul/li[2]/a").click()
         time.sleep(0.1)
         counter = 1
